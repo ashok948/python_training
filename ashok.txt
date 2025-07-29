@@ -1,0 +1,26 @@
+insert into 
+city(id,name,country)values(3,"banglore","india")
+#########
+insert into 
+city(id,name,country)values(3,"banglore","india")
+##################
+slect * from city where country ='uk' or id =1 
+select * from city where country = 'uk' and id =1
+*************
+create table student(
+roll_no int,
+name varchar(50),
+street text,
+address text
+)
+*******
+insert into student (roll_no,name,street ,address)  values(1,"test","stree1","stree1 banglore india")
+#####
+create table user(
+id int not null,
+name varchar(50),
+email varchar(50),
+mobile varchar(50),
+primary key(id)
+)
+%%%%
