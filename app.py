@@ -1,99 +1,102 @@
-from flask import Flask, request  
-from flask_mysqldb import MySQL  
+from flask import Flask, render_template, jsonify, request
+from flask_mysqldb import MySQL
 
-app = Flask(__name__)  
+app = Flask(__name__)
 
-
+# MySQL Configuration
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'roottoor'
-app.config['MYSQL_DB'] = 'aug_cse'
-
+app.config['MYSQL_DB'] = 'lion_ece'
 mysql = MySQL(app)
 
+# --- Static Routes ---
 @app.route('/')
-def home():
-    return "Hello from Flask!"
+def printMyname():
+    return "If you have dare come to Halasur, meet Halasur Don Karan."
 
-@app.route('/save_blog', methods=['POST'])
-def save_blog():
-    #title = request.form["title"]
-    #content = request.form["content"]
-    json =request.get_json()
-    title=json.get("title")
-    content=json.get("content")
+@app.route('/myweb', methods=['GET'])
+def myweb():
+    return render_template("index.html")
+
+@app.route('/home')
+def loadHomeHtml():
+    return render_template("home.html")
+
+@app.route('/about')
+def loadAboutHtml():
+    return render_template("about.html")
+
+@app.route('/contact')
+def loadContactHtml():
+    return render_template("contact.html")
+
+@app.route('/user_detail')
+def userDetail():
     cur = mysql.connection.cursor()
-    sql = "insert into blog (title, content) values (%s, %s)"
-    val = [title, content]
+    cur.execute("SELECT * FROM people")
+    results = cur.fetchall()
+    cur.close()
+    return jsonify(results)
+
+# --- Registration Form ---
+@app.route('/add_form', methods=['GET'])
+def register_form():
+    return render_template("register.html")
+
+# --- Add New User ---
+@app.route("/add", methods=["POST"])
+def addUser():
+    id = request.form.get("id")
+    email = request.form.get("email")
+
+    cur = mysql.connection.cursor()
+    sql = "INSERT INTO people (id, email) VALUES (%s, %s)"
+    val = (id, email)
     cur.execute(sql, val)
     mysql.connection.commit()
     cur.close()
-    return "Register success"
+    return "Registration successful"
 
+# --- Update Form ---
+@app.route("/update_form", methods=["GET"])
+def update_form():
+    return render_template("update.html")
 
+# --- Update Existing User ---
+@app.route("/update", methods=["POST"])
+def update():
+    id = request.form.get("id")
+    email = request.form.get("name")
 
-
-
-@app.route('/update_blog', methods=['POST'])
-def update_blog():
-    #title = request.form["title"]
-    #content = request.form["content"]
-    json =request.get_json()
-    id=json.get("id")
-    title=json.get("title")
-    content=json.get("content")
     cur = mysql.connection.cursor()
-    sql = "update blog set title=%s,content=%s where id=%s"
-    val = [title, content,id]
+    sql = "UPDATE people SET name = %s WHERE id = %s"
+    val = (email, id)
     cur.execute(sql, val)
     mysql.connection.commit()
     cur.close()
-    return "Register success"
+    return "Update successful"
 
 
+@app.route("/delete",methods=["POST"])
+def deleteuser():
+    id= request.form['id']
+    
+    cur=mysql.connection.cursor()
+    sql= "delete from people where id=%s"
+    val=[id] 
+    # follow same order
+    cur.execute(sql,val)
+    mysql.connection.commit()
+    cur.close()
+    return " Delete successful"
+
+
+@app.route("/delete_form" ,methods=["GET"])
+def deleteform():
+    return render_template("delete.html")
+
+
+# --- Run App ---
 if __name__ == '__main__':
     app.run()
-
-
-
-
-@app.route('/delete_blog', methods=['POST'])
-def delete_blog():
-    #title = request.form["title"]
-    #content = request.form["content"]
-    json =request.get_json()
-    id=json.get("id")
-    cur = mysql.connection.cursor()
-    sql = "delete from blog where id=%s"
-    val = [id]
-    cur.execute(sql, val)
-    mysql.connection.commit()
-    cur.close()
-    return "Register success"
-
-
-if __name__ == '__main__':
-    app.run()
-
-
-
-
-@app.route('/select_blog', methods=['POST'])
-def select_blog():
-    #title = request.form["title"]
-    #content = request.form["content"]
-    json =request.get_json()
-    id=json.get("id")
-    cur = mysql.connection.cursor()
-    sql = "select * from blog where id=%s"
-    val = [id]
-    cur.execute(sql, val)
-    mysql.connection.commit()
-    cur.close()
-    return "Register success"
-
-
-if __name__ == '__main__':
-    app.run()
-
-
