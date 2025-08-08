@@ -1,388 +1,302 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Coverflow - One Page Portfolio</title>
-    <link href="templatemo-3d-coverflow.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Classic - Responsive Bootstrap 4.0 Template</title>
 <!--
-
-TemplateMo 595 3d coverflow
-
-https://templatemo.com/tm-595-3d-coverflow
-
+Classic Template
+http://www.templatemo.com/tm-488-classic
 -->
+    <!-- load stylesheets -->
+    <link rel="stylesheet" href="static/https://fonts.googleapis.com/css?family=Open+Sans:300,400">  <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">                                      <!-- Bootstrap style -->
+    <link rel="stylesheet" href="static/css/templatemo-style.css">                                   <!-- Templatemo style -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+          <![endif]-->
 </head>
-<body>
-    <!-- Header -->
-    <header class="header" id="header">
-        <a href="#home" class="logo-container">
-            <div class="logo">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
-                        </linearGradient>
-                    </defs>
-                    <rect x="10" y="25" width="15" height="50" fill="url(#grad1)" transform="rotate(-15 17.5 50)" />
-                    <rect x="35" y="15" width="15" height="70" fill="url(#grad1)" />
-                    <rect x="60" y="25" width="15" height="50" fill="url(#grad1)" transform="rotate(15 67.5 50)" />
-                    <circle cx="50" cy="50" r="45" fill="none" stroke="url(#grad1)" stroke-width="2" opacity="0.5" />
-                </svg>
+
+    <body>
+       
+        <div class="tm-header">
+            <div class="container-fluid">
+                <div class="tm-header-inner">
+                    <a href="#" class="navbar-brand tm-site-name">Classic</a>
+                    
+                    <!-- navbar -->
+                    <nav class="navbar tm-main-nav">
+
+                        <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#tmNavbar">
+                            &#9776;
+                        </button>
+                        
+                        <div class="collapse navbar-toggleable-sm" id="tmNavbar">
+                            <ul class="nav navbar-nav">
+                                <li class="nav-item active">
+                                    <a href="/index" class="nav-link">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/about" class="nav-link">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/blog" class="nav-link">Blog</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/contact" class="nav-link">Contact</a>
+                                </li>
+                            </ul>                        
+                        </div>
+                        
+                    </nav>  
+
+                </div>                                  
+            </div>            
+        </div>
+<!-- <!--  -->
+        <!-- {% for r in results %}
+        <h1>{{r[0] [0]}}</h1>
+        {% endfor %}  -->
+
+         {% for r in results %}
+         <div style="border:1px solid">
+        <h1>{{r[0]}}</h1>
+         <h1>{{r[1]}}</h1>
+         </divdiv>
+        {% endfor %} 
+
+
+        <div class="tm-home-img-container">
+            <img src="static/img/tm-home-img.jpg" alt="Image" class="hidden-lg-up img-fluid">
+        </div>
+
+        <section class="tm-section">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-xs-center">
+                        <h2 class="tm-gold-text tm-title">Introduction</h2>
+                        <p class="tm-subtitle">Suspendisse ut magna vel velit cursus tempor ut nec nunc. Mauris vehicula, augue in tincidunt porta, purus ipsum blandit massa.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    {% for result in results %}
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+
+                        <div class="tm-content-box">
+                            <img src="static/img/tm-img-310x180-1.jpg" alt="Image" class="tm-margin-b-20 img-fluid">
+                            <h4 class="tm-margin-b-20 tm-gold-text">{{result[0]}}</h4>
+                            <p class="tm-margin-b-20">{{result[1]}}</p>
+                            <a href="#" class="tm-btn text-uppercase">Detail</a>    
+                        </div>  
+
+                    </div>
+                        {% endfor %}
+
+                   
+                   
+
+                 
+                </div> <!-- row -->
+
+                <div class="row tm-margin-t-big">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div class="tm-2-col-left">
+                            
+                            <h3 class="tm-gold-text tm-title">Pellentesque fermentum mauris et posuere</h3>
+                            <p class="tm-margin-b-30">Vivamus accumsan blandit ligula. Sed lobortis efficitur sapien</p>
+                            <img src="static/img/tm-img-660x330-1.jpg" alt="Image" class="tm-margin-b-40 img-fluid">
+                            <p>
+                                Donec tempor lobortis tortor, in feugiat massa facilisis sed. Ut dignissim viverra pretium. In eu justo maximus turpis feugiat finibus scelerisque nec eros. Cras nec lectus tempor nibh vestibulum eleifend et ac elit.
+                            </p>
+                            <p>Morbi vel pharetra massa, non iaculis tortor. Nulla porttitor tincidunt felis et feugiat. Vivamus fermentum ligula justo, sit amet blandit nisl volutpat id. Fusce sagittis ultricies felis, non luctus mauris lacinia quis.</p>
+                            <p class="m-b-2"> Ut fringilla lacus ac tempor ullamcorper. Mauris iaculis placerat ex et mattis. Mauris id vulputate lectus, id fermentum sapien.
+                            </p>
+                            <a href="#" class="tm-btn text-uppercase">Read More</a>
+
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+
+                        <div class="tm-2-col-right">
+
+                            <div class="tm-2-rows-md-swap">
+                                <div class="tm-overflow-auto row tm-2-rows-md-down-2">
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                        <h3 class="tm-gold-text tm-title">
+                                            Categories
+                                        </h3>
+                                        <nav>
+                                            <ul class="nav">
+                                                <li><a href="#" class="tm-text-link">Tincidunt non faucibus placerat</a></li>
+                                                <li><a href="#" class="tm-text-link">Vestibulum tempor ac lectus</a></li>
+                                                <li><a href="#" class="tm-text-link">Fusce non turpis euismod</a></li>
+                                                <li><a href="#" class="tm-text-link">Nam in augue consectetur</a></li>
+                                                <li><a href="#" class="tm-text-link">Text Link Color #006699</a></li>
+                                            </ul>
+                                        </nav>    
+                                    </div> <!-- col -->
+
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 tm-xs-m-t">
+                                        <h3 class="tm-gold-text tm-title">
+                                            Useful Links
+                                        </h3>
+                                        <nav>
+                                            <ul class="nav">
+                                                <li><a href="#" class="tm-text-link">Suspendisse sed dui nulla</a></li>
+                                                <li><a href="#" class="tm-text-link">Lorem ipsum dolor sit</a></li>
+                                                <li><a href="#" class="tm-text-link">Duiss nec purus et eros</a></li>
+                                                <li><a href="#" class="tm-text-link">Etiam pulvinar et ligula sed</a></li>
+                                                <li><a href="#" class="tm-text-link">Proin egestas eu felis et iaculis</a></li>
+                                            </ul>
+                                        </nav>    
+                                    </div> <!-- col -->
+                                </div>                        
+                                
+                                <div class="row tm-2-rows-md-down-1 tm-margin-t-mid">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                        <h3 class="tm-gold-text tm-title tm-margin-b-30">Related Posts</h3>
+                                        <div class="media tm-related-post">
+                                          <div class="media-left media-middle">
+                                            <a href="#">
+                                              <img class="media-object" src="img/tm-img-240x120-1.jpg" alt="Generic placeholder image">
+                                            </a>
+                                          </div>
+                                          <div class="media-body">
+                                            <a href="#"><h4 class="media-heading tm-gold-text tm-margin-b-15">Lorem ipsum dolor</h4></a>
+                                            <p class="tm-small-font tm-media-description">Aenean cursus tellus mauris, quis consequat mauris dapibus id. Donec scelerisque porttitor pharetra.</p>
+                                          </div>
+                                        </div>
+                                        <div class="media tm-related-post">
+                                          <div class="media-left media-middle">
+                                            <a href="#">
+                                              <img class="media-object" src="img/tm-img-240x120-2.jpg" alt="Generic placeholder image">
+                                            </a>
+                                          </div>
+                                          <div class="media-body">
+                                            <a href="#"><h4 class="media-heading tm-gold-text tm-margin-b-15">Lorem ipsum dolor</h4></a>
+                                            <p class="tm-small-font tm-media-description">Aenean cursus tellus mauris, quis consequat mauris dapibus id. Donec scelerisque porttitor pharetra.</p>
+                                          </div>
+                                        </div>
+                                        <div class="media tm-related-post">
+                                          <div class="media-left media-middle">
+                                            <a href="#">
+                                              <img class="media-object" src="img/tm-img-240x120-3.jpg" alt="Generic placeholder image">
+                                            </a>
+                                          </div>
+                                          <div class="media-body">
+                                            <a href="#"><h4 class="media-heading tm-gold-text tm-margin-b-15">Lorem ipsum dolor</h4></a>
+                                            <p class="tm-small-font tm-media-description">Aenean cursus tellus mauris, quis consequat mauris dapibus id. Donec scelerisque porttitor pharetra.</p>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                </div> <!-- row -->
+
             </div>
-            <div class="logo-text">3D Coverflow</div>
-        </a>
+        </section>
         
-        <nav class="main-menu" id="mainMenu">
-            <a href="#home" class="menu-item active">Home</a>
-            <a href="#about" class="menu-item">About</a>
-            <a href="#contact" class="menu-item">Contact</a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="menu-item external">GitHub</a>
-        </nav>
-        
-        <div class="menu-toggle" id="menuToggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </header>
-
-    <!-- Home Section -->
-    <section id="home" class="section">
-        <div class="coverflow-wrapper">
-            <div class="info">
-                <h2 id="current-title">Mountain Landscape</h2>
-                <p id="current-description">Majestic peaks covered in snow during golden hour</p>
-            </div>
-
-            <div class="coverflow-container" tabindex="0">
-                <div class="coverflow" id="coverflow">
-                    <div class="coverflow-item" data-index="0">
-                        <div class="cover image-loading">
-                            <img src="static/images/mountain-landscape.jpg" alt="Mountain Landscape" loading="lazy">
-                        </div>
-                        <div class="reflection"></div>
-                    </div>
-                    <div class="coverflow-item" data-index="1">
-                        <div class="cover image-loading">
-                            <img src="static/images/forest-path.jpg" alt="Forest Path" loading="lazy">
-                        </div>
-                        <div class="reflection"></div>
-                    </div>
-                    <div class="coverflow-item" data-index="2">
-                        <div class="cover image-loading">
-                            <img src="static/images/serene-water-mirroring.jpg" alt="Lake Reflection" loading="lazy">
-                        </div>
-                        <div class="reflection"></div>
-                    </div>
-                    <div class="coverflow-item" data-index="3">
-                        <div class="cover image-loading">
-                            <img src="static/images/ocean-sunset-golden-hour.jpg" alt="Ocean Sunset" loading="lazy">
-                        </div>
-                        <div class="reflection"></div>
-                    </div>
-                    <div class="coverflow-item" data-index="4">
-                        <div class="cover image-loading">
-                            <img src="static/images/rolling-sand-dunes.jpg" alt="Desert Dunes" loading="lazy">
-                        </div>
-                        <div class="reflection"></div>
-                    </div>
-                    <div class="coverflow-item" data-index="5">
-                        <div class="cover image-loading">
-                            <img src="static/images/starry-night.jpg" alt="Starry Night" loading="lazy">
-                        </div>
-                        <div class="reflection"></div>
-                    </div>
-                    <div class="coverflow-item" data-index="6">
-                        <div class="cover image-loading">
-                            <img src="static/images/cascading-waterfall.jpg" alt="Waterfall" loading="lazy">
-                        </div>
-                        <div class="reflection"></div>
-                    </div>
-                </div>
-
-                <button class="nav-button prev" onclick="navigate(-1)">‹</button>
-                <button class="nav-button next" onclick="navigate(1)">›</button>
-
-                <div class="dots-container" id="dots"></div>
-                
-                <!-- Play/Pause Button -->
-                <button class="play-pause-button" id="playPauseBtn" onclick="toggleAutoplay()">
-                    <span class="play-icon">▶</span>
-                    <span class="pause-icon" style="display: none;">❚❚</span>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="about-content">
-            <div class="about-header">
-                <h2>Discover 3D Coverflow</h2>
-                <p>A revolutionary way to showcase your visual content with stunning 3D effects and seamless interactions</p>
-            </div>
-            
-            <div class="about-main">
-                <div class="about-visual">
-                    <div class="showcase-display">
-                        <div class="showcase-main">
-                            <div class="corner-decoration top-left"></div>
-                            <div class="corner-decoration bottom-right"></div>
-                            
-                            <div class="showcase-logo">
-                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="10" y="25" width="15" height="50" fill="white" transform="rotate(-15 17.5 50)" opacity="0.9" />
-                                    <rect x="35" y="15" width="15" height="70" fill="white" />
-                                    <rect x="60" y="25" width="15" height="50" fill="white" transform="rotate(15 67.5 50)" opacity="0.9" />
-                                    <circle cx="50" cy="50" r="45" fill="none" stroke="white" stroke-width="2" opacity="0.3" />
-                                </svg>
-                            </div>
-                            
-                            <h3 class="showcase-title">3D Coverflow</h3>
-                            <p class="showcase-subtitle">Transform your image galleries into immersive 3D experiences</p>
-                            
-                            <div class="showcase-badges">
-                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer" class="badge">HTML5</a>
-                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer" class="badge">CSS3</a>
-                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" class="badge">JavaScript</a>
-                                <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design" target="_blank" rel="noopener noreferrer" class="badge">Responsive</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="about-info">
-                    <h3>Elevate Your Gallery Experience</h3>
-                    <p>3D Coverflow is brought to you by TemplateMo. Transform the way you present images with our cutting-edge 3D coverflow technology. Create immersive, interactive galleries that captivate your audience and leave a lasting impression.</p>
-                    <p>Whether you're showcasing portfolio pieces, product images, or creating an interactive story, our 3D coverflow brings your content to life with fluid animations and intuitive controls.</p>
+        <footer class="tm-footer">
+            <div class="container-fluid">
+                <div class="row">
                     
-                    <ul class="feature-list">
-                        <li>Smooth 3D transitions with hardware acceleration</li>
-                        <li>Touch-enabled navigation for mobile devices</li>
-                        <li>Customizable autoplay and timing controls</li>
-                        <li>Keyboard navigation support</li>
-                        <li>Reflection effects for added depth</li>
-                    </ul>
-                    
-                    <a href="#contact" class="cta-button">
-                        Start Your Project
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="stats-section">
-                <div class="stat-item">
-                    <div class="stat-number">60fps</div>
-                    <div class="stat-label">Smooth Performance</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Responsive Design</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">3D</div>
-                    <div class="stat-label">Visual Effects</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">∞</div>
-                    <div class="stat-label">Customization</div>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+                        
+                        <div class="tm-footer-content-box">
+                            <h3 class="tm-gold-text tm-title tm-footer-content-box-title">Proin eu posuere felis</h3>
+                            <div class="tm-gray-bg">
+                                <p>Classic is free HTML CSS website template provided by templatemo for everyone. Feel free to use it.</p>
+                                <p>Aenean cursus tellus mauris, quis consequat mauris dapibus id. Donec scelerisque porttitor pharetra.</p>
+                                <p><strong>Danny Egg (Executive)</strong></p>    
+                            </div>    
+                        </div>
+                                                
+                    </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="contact-content">
-            <div class="contact-header">
-                <h2>Get In Touch</h2>
-                <p>Have a project in mind? Let's create something amazing together.</p>
-            </div>
-            
-            <div class="contact-container">
-                <div class="contact-info-section">
-                    <h3>Let's Connect</h3>
-                    <p>We're here to help bring your vision to life. Whether you need a stunning gallery, a complete website redesign, or custom development work, we'd love to hear from you.</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                                </svg>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Email</h4>
-                                <p>hello@3dcoverflow.com</p>
-                            </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+                        <div class="tm-footer-content-box tm-footer-links-container">
+                        
+                            <h3 class="tm-gold-text tm-title tm-footer-content-box-title">Nulla tortor dolor</h3>
+                            <nav>
+                                <ul class="nav">
+                                    <li><a href="#" class="tm-footer-link">Tincidunt non faucibus</a></li>
+                                    <li><a href="#" class="tm-footer-link">Vestibulum tempor</a></li>
+                                    <li><a href="#" class="tm-footer-link">Fusce non turpis euismod</a></li>
+                                    <li><a href="#" class="tm-footer-link">Lorem ipsum dolor sit</a></li>
+                                    <li><a href="#" class="tm-footer-link">Nam in augue consectetur</a></li>
+                                    <li><a href="#" class="tm-footer-link">Text Link Color #CCCC66</a></li>
+                                </ul>
+                            </nav>
+
                         </div>
                         
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                                </svg>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Phone</h4>
-                                <p>+1 (555) 123-4567</p>
-                            </div>
+                    </div>
+
+                    <!-- Add the extra clearfix for only the required viewport 
+                        http://stackoverflow.com/questions/24590222/bootstrap-3-grid-with-different-height-in-each-item-is-it-solvable-using-only
+                    -->
+                    <div class="clearfix hidden-lg-up"></div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+
+                        <div class="tm-footer-content-box">
+                        
+                            <h3 class="tm-gold-text tm-title tm-footer-content-box-title">Etiam mollis ornare</h3>
+                            <p class="tm-margin-b-30">Aenean cursus tellus mauris, quis consequat mauris dapibus id. Donec scelerisque porttitor pharetra.</p><hr class="tm-margin-b-30">
+                            <p class="tm-margin-b-30">Aenean cursus tellus mauris, quis consequat mauris dapibus id. Donec scelerisque porttitor pharetra.</p><hr class="tm-margin-b-30">
+                            <p class="tm-margin-b-30">Aenean cursus tellus mauris, quis consequat mauris dapibus id. Donec scelerisque porttitor pharetra.</p>
+                            <a href="#" class="tm-btn tm-btn-gray text-uppercase">Read More</a>
+
                         </div>
                         
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                                </svg>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+
+                        <div class="tm-footer-content-box">
+                        
+                            <h3 class="tm-gold-text tm-title tm-footer-content-box-title">Fusce non turpis</h3>
+                            <div class="tm-margin-b-30">
+                                <img src="static/img/tm-img-100x100-1.jpg" alt="Image" class="tm-footer-thumbnail">
+                                <img src="static/img/tm-img-100x100-2.jpg" alt="Image" class="tm-footer-thumbnail">
+                                <img src="static/img/tm-img-100x100-3.jpg" alt="Image" class="tm-footer-thumbnail">
+                                <img src="static/img/tm-img-100x100-4.jpg" alt="Image" class="tm-footer-thumbnail">
+                                <img src="static/img/tm-img-100x100-5.jpg" alt="Image" class="tm-footer-thumbnail">
+                                <img src="static/img/tm-img-100x100-6.jpg" alt="Image" class="tm-footer-thumbnail">
                             </div>
-                            <div class="contact-text">
-                                <h4>Address</h4>
-                                <p>123 Design Street, San Francisco, CA 94102</p>
-                            </div>
+                            <p class="tm-margin-b-20">Curabitur dui massa, aliquam quis mi sed, tempor vulputate tellus. Sed vestibulum non neque.</p>
+                            <a href="#" class="tm-btn tm-btn-gray text-uppercase">Browse</a>
+
                         </div>
                         
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                                </svg>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Business Hours</h4>
-                                <p>Monday - Friday: 9:00 AM - 6:00 PM PST</p>
-                            </div>
-                        </div>
                     </div>
-                    
-                    <div class="social-links">
-                        <h4>Follow Us</h4>
-                        <div class="social-buttons">
-                            <a href="#" class="social-btn" title="Facebook">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                                </svg>
-                            </a>
-                            <a href="#" class="social-btn" title="Twitter">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                                </svg>
-                            </a>
-                            <a href="#" class="social-btn" title="LinkedIn">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                                </svg>
-                            </a>
-                            <a href="#" class="social-btn" title="Instagram">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z"/>
-                                </svg>
-                            </a>
-                        </div>
+
+
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 tm-copyright-col">
+                        <p class="tm-copyright-text">Copyright 2016 Your Company Name</p>
                     </div>
                 </div>
-                
-                <div class="contact-form-section">
-                    <form class="contact-form" onsubmit="handleSubmit(event)">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Send Message</button>
-                    </form>
-                </div>
             </div>
-        </div>
-    </section>
+        </footer>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-copyright">
-                © 2025 3D Coverflow. All rights reserved. | Designed by <a href="https://templatemo.com" target="_blank" rel="noopener noreferrer">TemplateMo</a>
-            </div>
-            <div class="footer-links">
-                <a href="#privacy" onclick="event.preventDefault(); alert('Privacy Policy page would go here');">Privacy Policy</a>
-                <a href="#terms" onclick="event.preventDefault(); alert('Terms of Service page would go here');">Terms of Service</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scroll to top button -->
-    <div class="scroll-to-top" id="scrollToTop">
-        <span>↑</span>
-    </div>
-
-<script src="templatemo-3d-coverflow-scripts.js"></script>
-<script>
-  document.getElementById("menuToggle").addEventListener("click", () => {
-    document.getElementById("mainMenu").classList.toggle("active");
-  });
-</script>
-<div class="menu-toggle" id="menuToggle">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
-<script>
-  const scrollBtn = document.getElementById("scrollToTop");
-
-  window.addEventListener("scroll", () => {
-    scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
-  });
-
-  scrollBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-</script>
-<div class="scroll-to-top" id="scrollToTop">
-  <span>↑</span>
-</div>
-<script>
-  function navigate(direction) {
-    console.log("Navigating", direction);
-    // your carousel navigation logic here
-  }
-
-  function toggleAutoplay() {
-    const playIcon = document.querySelector(".play-icon");
-    const pauseIcon = document.querySelector(".pause-icon");
-    const isPlaying = pauseIcon.style.display === "inline";
-
-    if (isPlaying) {
-      pauseIcon.style.display = "none";
-      playIcon.style.display = "inline";
-      // Stop autoplay
-    } else {
-      pauseIcon.style.display = "inline";
-      playIcon.style.display = "none";
-      // Start autoplay
-    }
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    alert("Message submitted!");
-    // add AJAX or form logic here
-  }
-</script>
-
-
+        <!-- load JS files -->
+        <script src="static/js/jquery-1.11.3.min.js"></script>             <!-- jQuery (https://jquery.com/download/) -->
+        <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script> <!-- Tether for Bootstrap, http://stackoverflow.com/questions/34567939/how-to-fix-the-error-error-bootstrap-tooltips-require-tether-http-github-h --> 
+        <script src="static/js/bootstrap.min.js"></script>                 <!-- Bootstrap (http://v4-alpha.getbootstrap.com/) -->
+       
 </body>
 </html>

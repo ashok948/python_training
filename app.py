@@ -1,6 +1,9 @@
 from flask import Flask, render_template
 from flask_mysqldb import MySQL 
 app = Flask(__name__)
+@app.errorhandler(404)
+def page_not_found(e):
+    return "Oops! That page does not exist.", 404
 @app.route('/')
 def home():
     return "Welcome to the homepage!"
@@ -34,4 +37,5 @@ def contact():
 
 if __name__ == "__main__":
     app.run(debug=True)
-    
+
+
